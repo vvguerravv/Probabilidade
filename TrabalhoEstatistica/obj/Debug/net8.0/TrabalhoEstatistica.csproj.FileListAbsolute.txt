@@ -1,0 +1,14 @@
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\TrabalhoEstatistica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\TrabalhoEstatistica.AssemblyInfoInputs.cache
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\TrabalhoEstatistica.AssemblyInfo.cs
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\TrabalhoEstatistica.csproj.CoreCompileInputs.cache
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\bin\Debug\net8.0\TrabalhoEstatistica.exe
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\bin\Debug\net8.0\TrabalhoEstatistica.deps.json
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\bin\Debug\net8.0\TrabalhoEstatistica.runtimeconfig.json
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\bin\Debug\net8.0\TrabalhoEstatistica.dll
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\bin\Debug\net8.0\TrabalhoEstatistica.pdb
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\TrabalhoEstatistica.dll
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\refint\TrabalhoEstatistica.dll
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\TrabalhoEstatistica.pdb
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\TrabalhoEstatistica.genruntimeconfig.cache
+C:\Users\vi060569\RiderProjects\TrabalhoEstatistica\TrabalhoEstatistica\obj\Debug\net8.0\ref\TrabalhoEstatistica.dll

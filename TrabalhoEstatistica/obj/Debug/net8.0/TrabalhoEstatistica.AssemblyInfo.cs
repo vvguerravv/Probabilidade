@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrabalhoEstatistica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03593348e4ca1e0ea3677a91a0cff391871e6022")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrabalhoEstatistica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrabalhoEstatistica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

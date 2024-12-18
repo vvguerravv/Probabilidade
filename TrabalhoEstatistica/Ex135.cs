@@ -11,10 +11,24 @@ public class Ex135
                 Console.WriteLine("a) Espaço amostral:");
                 Console.WriteLine(string.Join(", ", espacoAmostral));
 
+
                 // Probabilidade de obter três caras
-                double probabilidadeTresCaras = 1.0 / espacoAmostral.Length;
-                Console.WriteLine("\nb) Probabilidade de obter três caras:");
-                Console.WriteLine($"P(CCC) = {probabilidadeTresCaras:P2}");
+                Random random = new Random();
+                int contaCaras = 0;
+
+                for(int i = 0;i < 1000000;i++){
+
+                     int[] resultados = { random.Next(0, 2), random.Next(0, 2), random.Next(0, 2) };
+                    // 1 irá representar cara e 0 coroa
+                    if(resultados[0] == 1 && resultados[1] == 1 && resultados[2] == 1) {
+                         contaCaras++;
+                    }  
+                }
+
+            
+
+                Console.WriteLine("\nb) Probabilidade de obter três caras: " + (double) contaCaras * 100/1000000 + "%");
+
 
                 // Novo espaço amostral: segundo lançamento é cara
                 string[] novoEspacoAmostral = { "CCC", "CCK", "KCC", "KCK" };
@@ -22,9 +36,16 @@ public class Ex135
                 Console.WriteLine(string.Join(", ", novoEspacoAmostral));
 
                 // Nova probabilidade de obter três caras
-                double novaProbabilidadeTresCaras = 1.0 / novoEspacoAmostral.Length;
-                Console.WriteLine("\nNova probabilidade de obter três caras:");
-                Console.WriteLine($"P(CCC | Segundo lançamento = cara) = {novaProbabilidadeTresCaras:P2}");
+                 for(int i = 0;i < 100000000;i++){
+
+                     int[] resultados = { random.Next(0, 2), random.Next(0, 2), random.Next(0, 2) };
+                    // 1 irá representar cara e 0 coroa
+                    if(resultados[0] == 1 && resultados[2] == 1) {
+                         contaCaras++;
+                    }  
+                }
+
+                Console.WriteLine("\nNova probabilidade de obter três caras: " + (double) contaCaras*100/100000000 + "%");
             
         }
     }

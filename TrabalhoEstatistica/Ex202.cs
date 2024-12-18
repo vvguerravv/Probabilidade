@@ -6,19 +6,38 @@ public class Ex202
 
     public void calcula()
     {
-        // Probabilidades fornecidas
-        double P_D_A = 0.15;  // Probabilidade de defeito dado que foi produzido pela máquina A
-        double P_D_B = 0.05;  // Probabilidade de defeito dado que foi produzido pela máquina B
-        double P_A = 0.5;      // Probabilidade de ser da máquina A
-        double P_B = 0.5;      // Probabilidade de ser da máquina B
+        Random random = new Random();
+        int totalDefeituosos = 0;
+        int defeituososDeA = 0;
 
-        // Probabilidade total de defeito
-        double P_D = (P_D_A * P_A) + (P_D_B * P_B);
+        // Simulação de 1.000.000 retiradas
+        for (int i = 0; i < 1000000; i++)
+        {
+            // Sorteio da máquina: 0 para A, 1 para B
+            int maquina = random.Next(0, 2);
 
-        // Aplicando o Teorema de Bayes para encontrar P(A|D)
-        double P_A_given_D = (P_D_A * P_A) / P_D;
+            if (maquina == 0) // Parafuso produzido por A
+            {
+                // Probabilidade de ser defeituoso: 15%
+                if (random.NextDouble() < 0.15)
+                {
+                    totalDefeituosos++;
+                    defeituososDeA++;
+                }
+            }
+            else // Parafuso produzido por B
+            {
+                // Probabilidade de ser defeituoso: 5%
+                if (random.NextDouble() < 0.05)
+                {
+                    totalDefeituosos++;
+                }
+            }
+        }
 
-        // Exibindo o resultado
-        Console.WriteLine($"A probabilidade de que o parafuso defeituoso tenha sido produzido pela máquina A é: {P_A_given_D:P2}");
+        // Probabilidade condicional: P(A | D)
+        double probabilidade = (double)defeituososDeA / totalDefeituosos;
+
+        Console.WriteLine($"Probabilidade de o parafuso defeituoso ser da máquina A: {probabilidade:P2}");
     }
 }

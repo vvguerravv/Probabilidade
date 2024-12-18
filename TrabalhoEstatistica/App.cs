@@ -42,7 +42,7 @@ public class App
         Console.WriteLine("\nQuestão 202: A máquinas A e B produzem o mesmo tipo de parafuso. A porcentagem de parafusos defeituosos produzido, respectivamente, pela máquina A e B é de 15% e de 5%. foram misturados numa caixa 100 parafusos produzidos por A e 100 parafusos produzidos por B. Se tirarmos um parafuso ao acaso e ele for defeituoso, a probabilidade de que tenha sido produzido pela maquina A é de quanto?");
         ex202.calcula();
         
-        Console.WriteLine("\nUma empresa costuma treinar seus operadores para realizarem certas tarefas na linha de produção. Sabe-se que os operadores que realizam o curso alcançam suas cotas de produção em 90% do tempo. Os operadores novos, que ainda não realizaram o curso, alcançam suas cotas em apenas 65% do tempo. Cinquenta por cento dos\nnovos operadores passam pelo curso. Dado que um operador alcança sua cota de produção, qual é a probabilidade de que ele tenha passado pelo curso?");
+        Console.WriteLine("\nQuestão 239: Uma empresa costuma treinar seus operadores para realizarem certas tarefas na linha de produção. Sabe-se que os operadores que realizam o curso alcançam suas cotas de produção em 90% do tempo. Os operadores novos, que ainda não realizaram o curso, alcançam suas cotas em apenas 65% do tempo. Cinquenta por cento dos\nnovos operadores passam pelo curso. Dado que um operador alcança sua cota de produção, qual é a probabilidade de que ele tenha passado pelo curso?");
         ex239.calcula();
         
     }

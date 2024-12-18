@@ -6,19 +6,34 @@ public class Ex239
 
     public void calcula()
     {
-        // Probabilidades fornecidas
-        double P_A_C = 0.90;  // Probabilidade de alcançar a cota dado que passou pelo curso
-        double P_A_N = 0.65;  // Probabilidade de alcançar a cota dado que não passou pelo curso
-        double P_C = 0.50;     // Probabilidade de ter passado pelo curso
-        double P_N = 0.50;     // Probabilidade de não ter passado pelo curso
+        Random random = new Random();
+        int totalExperimentos = 1000000;
+        int operadoresComCursoQueAlcancaram = 0;
+        int operadoresQueAlcancaram = 0;
 
-        // Probabilidade total de alcançar a cota
-        double P_A = (P_A_C * P_C) + (P_A_N * P_N);
+        for (int i = 0; i < totalExperimentos; i++)
+        {
+            // Determinar se o operador fez o curso (50% de chance)
+            bool fezCurso = random.NextDouble() < 0.5;
 
-        // Aplicando o Teorema de Bayes para encontrar P(C|A)
-        double P_C_given_A = (P_A_C * P_C) / P_A;
+            // Probabilidade de alcançar a cota dependendo de ter feito o curso
+            double probabilidadeDeAlcancar = fezCurso ? 0.90 : 0.65;
 
-        // Exibindo o resultado
-        Console.WriteLine($"A probabilidade de que o operador tenha passado pelo curso, dado que alcançou sua cota, é: {P_C_given_A:P2}");
+            // Determinar se o operador alcançou a cota
+            if (random.NextDouble() < probabilidadeDeAlcancar)
+            {
+                operadoresQueAlcancaram++;
+
+                if (fezCurso)
+                {
+                    operadoresComCursoQueAlcancaram++;
+                }
+            }
+        }
+
+        // Calculando a probabilidade de que o operador tenha feito o curso, dado que alcançou a cota
+        double probabilidade = (double)operadoresComCursoQueAlcancaram / operadoresQueAlcancaram;
+
+        Console.WriteLine($"Probabilidade de que o operador tenha feito o curso, dado que alcançou a cota: {probabilidade:P2}");
     }
 }

@@ -6,34 +6,67 @@ public class Ex174
 
     public void calcular()
     {
+
+        Random random = new Random();
         // Parte (a): Probabilidade de cores diferentes
-        int totalBolas = 20;
-        int bolasVerdes = 10;
-        int bolasAmarelas = 10;
+        int contaCor = 0;
+        for(int i = 0;i < 10000000; i++){
+            //0 será verde e 1 será amarela
+            int[] cores = {random.Next(0,2),random.Next(0,2)};
+            if(cores[0] == 0 && cores[1] == 1 || cores[0] == 1 && cores[1] == 0){
+                contaCor++;
+            }
+        }
 
-        // Total de combinações
-        double totalCombinacoes = Combinacao(totalBolas, 2);
-
-        // Combinações de cores diferentes
-        double combinacoesCoresDiferentes = bolasVerdes * bolasAmarelas;
-        double probabilidadeCoresDiferentes = combinacoesCoresDiferentes / totalCombinacoes;
-
-        Console.WriteLine($"a) Probabilidade de as duas bolas terem cores diferentes: {probabilidadeCoresDiferentes:P2}");
+        Console.WriteLine("a) Probabilidade de as duas bolas terem cores diferentes: " + (double) contaCor*100/10000000);
 
         // Parte (b): Probabilidade condicional
-        int bolasAmarelasPares = 5;
-        double probabilidadeBC_A = (double)bolasAmarelasPares / (totalBolas - 1);
-        Console.WriteLine($"b) P((B ∩ C) | A): {probabilidadeBC_A:P2}");
+        int eventosFavoraveis = 0;
+        int eventosTotaisVerde = 0;
+
+        for (int i = 0; i < 1000000; i++)
+        {
+            
+            int[] bolas = new int[20];
+            for (int j = 0; j < 10; j++) 
+                bolas[j] = 1; 
+            for (int j = 10; j < 20; j++) 
+                bolas[j] = 2; 
+            for (int j = 0; j < bolas.Length; j++)
+            {
+                int k = random.Next(bolas.Length);
+                int temp = bolas[j];
+                bolas[j] = bolas[k];
+                bolas[k] = temp;
+            }
+
+            // Retirando a primeira bola
+            int primeiraBola = bolas[0];
+
+            if (primeiraBola == 1) // A primeira bola é verde
+            {
+                eventosTotaisVerde++;
+
+                // Retirando a segunda bola
+                int segundaBola = bolas[1];
+
+                if (segundaBola == 2) // Se a segunda bola for amarela
+                {
+                    // Verificar se o número da segunda bola é par (bolas 12, 14, 16, 18, 20)
+                    int numeroSegundaBola = Array.IndexOf(bolas, segundaBola) + 1; 
+                    if (numeroSegundaBola % 2 == 0) 
+                    {
+                        eventosFavoraveis++;
+                    }
+                }
+            }
+        }
+
+
+        double probabilidade = (double)eventosFavoraveis / eventosTotaisVerde;
+        Console.WriteLine($"b) Probabilidade P((B ∩ C) | A): {probabilidade:P2}");
+
     }
 
-    // Função para calcular combinações C(n, k)
-    static double Combinacao(int n, int k)
-    {
-        double resultado = 1;
-        for (int i = 0; i < k; i++)
-            resultado *= (n - i);
-        for (int i = 1; i <= k; i++)
-            resultado /= i;
-        return resultado;
-    }
+
     }
